@@ -61,6 +61,7 @@ public class UserController {
             }
             existingUser.setEmail(user.getEmail());
             existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
+            existingUser.setCity(user.getCity());
             userRepository.save(existingUser);
             return new ResponseEntity<>("User updated successfully!", HttpStatus.OK);
 
